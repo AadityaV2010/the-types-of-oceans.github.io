@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="survey, oceans, types, rating">
+  <meta name="author" content="Aaditya Visavadiya">
+  <meta name="description" content="Survey">
+  <title>Survey</title>
+  <style>
+    body {
+      background-color: #efefef;
+    }
+
+    @media (min-width:500px) {
+      #surveyformfieldset {
+        width: 50%;
+        max-width: 600px;
+      }
+
+      #surveyform {
+        font-size: 150%;
+      }
+    }
+  </style>
+  <script src="surveyjavascript.js"></script>
+</head>
+
+<body>
+  <!--Need to make cookies for survey form just like the contact us form-->
+  <a href="index.html">Back to Home</a>
+  <br>
+  <form method="post" action="thankyou.html" onchange="s.value = survey.value, c.value = surveycomments.value"
+    id="surveyform">
+    <fieldset id="surveyformfieldset">
+      <legend>Survey</legend>
+      <p style="text-decoration:underline;font-weight: bold;display:inline;">Rating</p>
+      <br>
+      <input type="radio" name="survey" id="verysatisfied" tabindex="1" value="Very Satisfied" required>
+      <label for="verysatisfied">Very Satisfied</label>
+      <br>
+      <input type="radio" name="survey" id="satisfied" tabindex="2" value="Satisfied" required>
+      <label for="satisfied">Satisfied</label>
+      <br>
+      <input type="radio" name="survey" id="neutral" tabindex="1" value="Neutral" required>
+      <label for="neutral">Neutral</label>
+      <br>
+      <input type="radio" name="survey" id="dissatisfied" tabindex="1" value="Dissatisfied" required>
+      <label for="dissatisfied">Dissatisfied</label>
+      <br>
+      <input type="radio" name="survey" id="verydissatisfied" tabindex="1" value="Very Dissatisfied" required>
+      <label for="verydissatisfied">Very Dissatisfied</label>
+      <br><br>
+      <p style="text-decoration:underline;font-weight: bold;display:inline;">Comments</p>
+      <br>
+      <textarea name="surveycomments" rows="6" cols="40" maxlength="300"
+        placeholder="Type your comments here!"></textarea>
+    </fieldset>
+    <input type="button" value="Submit Survey" onclick="surveyformsubmitbuttonFunction()" id="inputtypebuttonsurvey">
+    <div id="surveydiv" style="display:none;">
+      <h3 style="text-decoration:underline;">Thank you for your feedback!</h3>
+      <p style="display:inline;"><b>We recieved your rating as:</b></p>
+      <!--<br><br>
+      <p style="display:inline;text-decoration:underline;">Survey Rating:</p>
+      <br><br>-->
+      <div id="surveyoutputdivrating" style="border:1px dashed black;display:inline;padding:1px;">
+        <output name="s">No Answer Specified (N/A)</output>
+      </div>
+      <br>
+      <p style="display:inline;"><b>Your comments were:</b></p>
+      <div id="surveyoutputdivcomments" style="border:1px dashed black;display:inline;padding:1px;">
+      <output name="c">No Answer Specified (N/A)</output>
+      </div>
+      <br>
+      <br>
+      <input type="button" value="Retake Survey" onClick="window.location.reload(true)"
+        id="surveyformreloadbutton">
+    </div>
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="contactusjavascript.js"></script>
+  <style>
+    #thankyouforcontactingus {
+      margin: 12px 12px 12px 12px;
+      padding: 5px 5px 5px 5px;
+      text-align: center;
+      color: aquamarine;
+      text-decoration: underline;
+      font-size: 45px;
+      display: inline;
+      animation-name: thankyouforcontactingus;
+      animation-duration: 4s;
+      animation-delay: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease;
+      animation-fill-mode: both;
+    }
+
+    @keyframes thankyouforcontactingus {
+      0% {
+        background-color: red;
+      }
+
+      25% {
+        background-color: orange;
+      }
+
+      50% {
+        background-color: greenyellow;
+      }
+
+      75% {
+        background-color: green;
+      }
+
+      100% {
+        background-color: blue;
+      }
+    }
+
+    #thankyouforcontactingusdiv {
+      text-align: center;
+    }
+
+    #showcookiesthankyouhtml {
+      text-align: center;
+      font-size: 22px;
+      max-width: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--Need to make style better-->
+  <!--Need to add a confirmation on pressing back button-->
+  <a href="index.html" target="_self">Back to Home</a>
+  <br><br>
+  <div id="thankyouforcontactingusdiv">
+    <h1 id="thankyouforcontactingus"> Thank you for contacting us! </h1>
+  </div>
+  <!--Need to add a rotating thumbs up image-->
+  <br><br>
+  <input type="button" value="Show Values" id="showcookiesbutton" onclick="ShowCookies()">
+  <input type="button" value="Hide Values" id="hidecookiesbutton" onclick="HideCookies()" style="display:none;">
+  <p id="showcookiesthankyouhtml"></p>
+</body>
+
+</html>
