@@ -138,7 +138,7 @@ function CreateCookies() {
   document.cookie = "Username=" + cookievalueinputusername;
 
   cookievalueinputpassword = escape(document.maincontactusform.inputpassword.value) + ";";
-  document.cookie = "Password=N/A (Security)";
+  document.cookie = "Password=*Password Not Displayed*";
   //document.cookie = "Password=" + cookievalueinputpassword;
 
   cookievalueemail = escape(document.maincontactusform.email.value) + ";";
