@@ -1,0 +1,102 @@
+h1 {
+  color: aqua;
+  text-decoration: underline;
+  font-size: 50px;
+  /*Maybe the size of the heading should be bigger*/
+}
+
+p {
+  color: rgba(0, 0, 255, 1);
+}
+
+ul {
+  color: #0090ff;
+  list-style-type: square;
+}
+
+#typesofoceansnavdiv {
+  background-color: rgba(20, 57, 224, 0.65);
+  border: dashed;
+  border-radius: 25px;
+  width: 250px;
+  height: auto;
+  border-color: red;
+  margin-bottom: 25px;
+}
+
+body {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Fitema_beach_in_Ikaria_island.jpg/640px-Fitema_beach_in_Ikaria_island.jpg");
+  background-repeat: repeat;
+  overflow: auto;
+}
+
+#oceanimage {
+  /*Used to be sticky*/position: fixed;
+  /*This used to be top: 0;*/ bottom: 0;
+  /*Don't know if this needs to be here*/ right: 0;
+  margin:1px 1px 1px 1px;
+  float: right;
+  border-radius: 100px;
+  width: 500px;
+}
+
+/*Used to be, "@media only screen and (max-width:850px)"*//*Removed "only screen and"*/
+@media (max-width:850px) {
+  #oceanimage {
+    display:none;
+  }
+}
+
+a {
+  color:aqua;
+}
+
+#oceansinfotext {
+  background-color: aqua;
+  display: inline;
+}
+
+#funfacts {
+  /*Position:Relative; - Used to be not commented out but was commented out because since it was on the side of the nav for the types of oceans, it would not reshape when the width of the browser window was too small*/
+  /* position: relative;
+  bottom: 150px;
+  left: 250px; */
+  font-size: 30px;
+  border: dashed;
+  border-radius: 0px;
+  border-color: red;
+  background-color: rgba(20, 57, 224, 0.5);
+  display: inline;
+}
+
+#ahrefcontactus {
+  font-size: 30px;
+  position: relative;
+  top: 25px;
+  border: dashed;
+  border-radius: 0px;
+  border-color: red;
+  background-color: rgba(20, 57, 224, 0.5);
+  display: inline;
+}
+
+a:hover {
+  color: red !important;
+}
+
+#mainnavdivnottypesofoceansnavdiv {
+  background-color:#777; /*Used to be black*/
+  display:inline;
+  padding:5px;
+  margin:5px;
+  font-size:20px;
+}
+
+div > .mainnavanchor{
+  color:blue;
+}
+
+.mainnavanchor:hover {
+  background-color:white;
+}
+/*Trying to make it rotate*/
