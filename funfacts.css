@@ -1,0 +1,28 @@
+table, tr, th, td {
+  border:1px double black;
+  border-collapse: seperate;
+}
+
+#funfactsoceantable {
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+/*Used to be top:0;*/
+.backtotopbutton {
+  position: sticky;
+  right: 0;
+  bottom: 0;
+  float: right;
+}
+
+#backtohomefunfacts {
+  position: sticky;
+  top: 0;
+  left: 0;
+  float: left;
+}
+
+body{
+  background-color: turquoise;
+}
