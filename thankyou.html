@@ -54,7 +54,7 @@
     }
 
     #showcookiesbutton {
-      width: 10%;
+      width: 100%;
       padding: 10px;
       border-radius: 5px;
       border: none;
@@ -66,7 +66,7 @@
     }
 
     #hidecookiesbutton {
-      width: 10%;
+      width: 100%;
       padding: 10px;
       border-radius: 5px;
       border: none;
@@ -75,6 +75,11 @@
       font-weight: bold;
       font-size: large;
       cursor: pointer;
+    }
+
+    #container {
+      width: 300px;
+      margin: auto;
     }
 
     #greencheckmarkimage {
@@ -169,8 +174,10 @@
   <!--Need to add a rotating thumbs up or check mark image-->
   <!--Added now-->
   <br><br><br>
-  <div id="showcookiesbuttondiv" style="text-align:center;"><input type="button" value="Show Responses" id="showcookiesbutton" onclick="ShowCookies()"></div>
-  <div id="hidecookiesbuttondiv" style="text-align:center;"><input type="button" value="Hide Responses" id="hidecookiesbutton" onclick="HideCookies()" style="display:none;"></div>
+  <div id="container">
+    <div id="showcookiesbuttondiv" style="text-align:center;"><input type="button" value="Show Responses" id="showcookiesbutton" onclick="ShowCookies()"></div>
+    <div id="hidecookiesbuttondiv" style="text-align:center;"><input type="button" value="Hide Responses" id="hidecookiesbutton" onclick="HideCookies()" style="display:none;"></div>
+  </div>
   <p id="showcookiesthankyouhtml"></p>
 </body>
 
