@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords"
+    content="types, oceans, world, pacific, atlantic, indian, arctic, antarctic, southern, funfacts, contact, form, about, login, sign up">
+  <meta name="author" content="Aaditya Visavadiya">
+  <meta name="description" content="Types of Oceans">
+  <title> The Types of Oceans </title>
+  <style>
+    #oceanstitlediv {
+     /*margin: 15px 15px 15px 5px;*/
+    }
+
+    #oceanstitle {
+      display: inline-block;
+      animation-name: oceanstitle;
+      animation-duration: 4s;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+      animation-timing-function: ease;
+      animation-fill-mode: both;
+    }
+
+    @keyframes oceanstitle {
+      0% {
+        background-color: red;
+      }
+
+      25% {
+        background-color: orange;
+      }
+
+      50% {
+        background-color: greenyellow;
+        transform: rotate(2880deg);
+      }
+
+      75% {
+        background-color: green;
+      }
+
+      100% {
+        background-color: blue;
+      }
+    }
+
+    #sorrynoscript {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 15px;
+      font-size: larger;
+      text-align: left;
+      text-decoration: underline;
+      font-weight: 700;
+      color: black;
+      
+    }
+
+    #indexpagewhole {
+      padding: 10px;
+      margin: 10px;
+    }
+
+    #iframesurvey {
+      position: absolute;
+      width: 375px;
+      height: 250px;
+    }
+
+    #oceanimageandsurveyiframeandnav {
+      position: relative;
+    }
+
+    #loginlink:hover {
+      font-weight: bold;
+      color: red;
+    }
+
+    #loginlink {
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 25px;
+    }
+
+    #signoutButton:hover {
+      font-weight: bold;
+      color: red;
+    }
+
+    #signoutButton {
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 25px;
+    }
+  </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Retrieve the logged-in user's data from Local Storage
+      var loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+      var usernameElement = document.getElementById('username');
+      var signoutButton = document.getElementById('signoutButton');
+
+      // Check if the user is logged in
+      if (loggedInUser) {
+        usernameElement.textContent = loggedInUser.username;
+        signoutButton.style.display = 'block'; // Show the sign-out button
+        welcomeMessage.style.display = 'block'; // Show the welcome message
+        loginlink.style.display = 'none';//Hide the login link when logged in
+      } else {
+        // Redirect to the login page if the user is not logged in
+        //window.location.href = 'login.html';
+      }
+
+      signoutButton.addEventListener('click', function () {
+        // Clear the logged-in user's data from Local Storage
+        localStorage.removeItem('loggedInUser');
+
+        // Redirect to the login page
+        //maybe should just redirect to index.html
+        window.location.href = 'login.html';
+      });
+    });
+  </script>
+</head>
+
+<body>
+    <!--<script src="undefined"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-contact-form/1.4.1/js/contact-form.min.js"></script>-->
+  <!--position:sticky;top:0;, for welcome, !-->
+  <h2 id="welcomeMessage" style="display:none;">Welcome, <span id="username"></span>!</h2>
+  <button id="signoutButton"
+    style="color:darkblue;display:none;float:right;background-color:green;padding:10px;position:absolute;top:0;right:0;margin:5px;">Sign Out</button>
+  <!--Maybe can add a  transition for images or something-->
+  <div id="indexpagewhole">
+    <button id="loginlink"
+    style="color:darkblue;float:right;background-color:green;padding:10px;position:absolute;top:0;right:0;margin:5px;" onclick="window.location.href='login.html'">Login</button>
+   <!-- <a href="login.html" id="loginlink"
+      style="float:right;background-color:green;padding:10px;position:absolute;top:0;right:0; margin:5px;">Login</a> -->
+    <!-- <script language="JavaScript">
+      alert('Welcome! Here you can learn about all of the different types of oceans! Enjoy!');
+    </script> -->
+    <noscript>
+      <p id="sorrynoscript">Sorry! This device does not support JavaScript. (Some features may be disabled)</p>
+      <br>
+    </noscript>
+    <!--For H1 heading, maybe vw could work-->
+    <div id="oceanstitlediv">
+      <h1 id="oceanstitle" style="font-family:'Times New Roman', Georgia, serif, sans-serif;">The Types of Oceans</h1>
+    </div>
+    <!--Make the main nav rotate when clicking (a:active)-->
+    <nav>
+      <div id="mainnavdivnottypesofoceansnavdiv"><span class="rotateanimationnav" id="navhome"><a href="index.html"
+            class="mainnavanchor">Home</a></span> <span style="color:aqua;">|</span> <span class="rotateanimationnav"
+          id="navoceans"><a href="oceans.html" class="mainnavanchor">Oceans</a></span> <span
+          style="color:aqua;">|</span> <span class="rotateanimationnav" id="navcontactus"><a href="contactus.html"
+            class="mainnavanchor">Contact Us</a></span> <span style="color:aqua;">|</span> <span
+          class="rotateanimationnav" id="navaboutus"><a href="aboutus.html" class="mainnavanchor">About Us</a></span>
+      </div>
+    </nav>
+    <br>
+    <p id="oceansinfotext" style="font-size: 20px;">There are 5 different types of oceans. <br>Click on each to learn
+      more!</p>
+    <br>
+    <br>
+    <div id="oceanimageandsurveyiframeandnav">
+      <nav>
+        <div id="typesofoceansnavdiv">
+          <ul style="font-weight: 900; font-size: 20px;">
+            <li><a href="./typesofoceansHTML/pacific.html" target="_blank">Pacific</a></li>
+            <li><a href="./typesofoceansHTML/atlantic.html" target="_blank">Atlantic</a></li>
+            <li><a href="./typesofoceansHTML/indian.html" target="_blank">Indian</a></li>
+            <li><a href="./typesofoceansHTML/arctic.html" target="_blank">Arctic</a></li>
+            <li><a href="./typesofoceansHTML/antarctic.html" target="_blank">Antarctic/Southern</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div id="funfacts">
+        <a href="funfacts.html" target="_blank"> Fun Facts! </a>
+      </div>
+      <br>
+
+      <img id="oceanimage"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Sunset_over_the_ocean_%28Namibia%29.jpg/640px-Sunset_over_the_ocean_%28Namibia%29.jpg"
+        alt="sunset ocean">
+      <!--Maybe this does not need to be here since it is in the main nav at the top-->
+      <!--<div id="ahrefcontactus">
+        <!-Maybe it should be target="_self"-><a href="contactus.html" target="_blank">Contact Us!</a>
+      </div>-->
+    </div>
+    <br>
+    <details>
+      <summary style="color:rgba(0, 255, 255, 1);text-decoration:underline;font-weight:bolder;font-size:20px;">Click
+        here to show the
+        <!--Don't know if this should be target="_blank or _self"--><a href="survey.html" style="color:yellow;"
+          target="_blank">Survey</a>
+      </summary>
+      <iframe src="survey.html" id="iframesurvey"></iframe>
+    </details>
+    <br><br><br><br><br><br><br>
+  </div>
+  <!--<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Retrieve the logged-in user's name from Local Storage
+      var loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+      var usernameElement = document.getElementById('username');
+
+      // Check if the user is logged in
+      if (loggedInUser) {
+        usernameElement.textContent = loggedInUser.username;
+      } else {
+        // Redirect to the login page if the user is not logged in
+        window.location.href = 'login.html';
+      }
+    });
+  </script>-->
+</body>
+
+</html>
