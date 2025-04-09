@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="types of oceans, sign up, form">
+  <meta name="author" content="Aaditya Visavadiya">
+  <meta name="description" content="Sign Up">
+  <title>Sign Up</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 350px;
+      margin: auto;
+     /* margin-top: auto;*/
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    #submitbuttonsignup {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #4CAF50;
+      color: #fff;
+      font-weight: bold;
+      font-size: large;
+      cursor: pointer;
+    }
+
+    #submitbuttonsignup:hover {
+      background-color: #45a049;
+    }
+
+    .success-message-signup {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .password-confirm-error {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+      // Retrieve the logged-in user's data from Local Storage
+      var loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+      //var usernameElement = document.getElementById('username');
+      //var signoutButton = document.getElementById('signoutButton');
+
+      // Check if the user is logged in
+      if (loggedInUser) {
+        //usernameElement.textContent = loggedInUser.username;
+        //signoutButton.style.display = 'block'; // Show the sign-out button
+       // welcomeMessage.style.display = 'block'; // Show the welcome message
+        //loginlink.style.display = 'none';//Hide the login link when logged in
+        window.location.href = 'index.html';
+      } else {
+        // Redirect to the login page if the user is not logged in
+        //window.location.href = 'login.html';
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <!--ChatGPT was used for some of the code-->
+  <div style="margin:7px;">
+    <a href="index.html">Back to Home</a>
+  </div>
+  <div class="container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <!--use php, signup.php-->
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" style="max-width:90%;" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" style="max-width:90%;" required>
+      </div>
+      <div class="input-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" style="max-width:90%;" required>
+      </div>
+      <button type="submit" id="submitbuttonsignup">Sign Up</button>
+    </form>
+    <p class="success-message-signup" id="successMessagesignup"></p>
+    <p class="password-confirm-error" id="passwordconfirmerror"></p>
+    <p>Already have an account? <a href="login.html">Log In</a></p>
+    <!-- <p style="color:gray;font-style:italic;text-align:right;">*You must login or sign up before accessing the website.</p>-->
+  </div>
+  <script>
+    //check passwords text
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const passwordError = document.getElementById('passwordconfirmerror');
+
+    function checkPasswords() {
+     const password = passwordInput.value;
+     const confirmPassword = confirmPasswordInput.value;
+
+     if (password === confirmPassword) {
+       passwordError.textContent = '';
+     } else {
+       passwordError.textContent = 'Passwords do not match.';
+     }
+    }
+    passwordInput.addEventListener('input', checkPasswords);
+    confirmPasswordInput.addEventListener('input', checkPasswords);
+    //check passwords alert
+    document.getElementById('signupForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent form submission
+
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+
+      // Perform client-side validation
+      if (username.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
+        document.getElementById('successMessagesignup').textContent = '';
+        alert('Please enter username and password.');
+        
+      } else if (password !== confirmPassword) {
+        alert('Passwords do not match.'); 
+      } else {
+        // Retrieve existing users from Local Storage or initialize an empty array
+        var users = JSON.parse(localStorage.getItem('users')) || [];
+
+        // Check if the username already exists
+        var existingUser = users.find(function (user) {
+          return user.username === username;
+        });
+
+        if (existingUser) {
+          alert('Username already exists. Please choose a different username.');
+        } else {
+          // Create a new user object with the entered data
+          var newUser = {
+            username: username,
+            password: password
+          };
+
+          // Add the new user to the array
+          users.push(newUser);
+
+          // Save the updated user array to Local Storage
+          localStorage.setItem('users', JSON.stringify(users));
+
+          document.getElementById('successMessagesignup').textContent = 'Sign up successful! Redirecting...';
+          //Want to add, if page does not redirect automatically, click link here
+            setTimeout(function() {
+            window.location.href = 'login.html';
+          }, 1000);
+         /* setTimeout(function () {
+            document.getElementById('successMessage').style.display = 'none'
+          }, 5000); */
+          //maybe should be 1000
+          setTimeout(function() {
+          successMessagesignup.textContent = '';
+        }, 5000);
+          document.getElementById('username').value = '';
+          document.getElementById('password').value = '';
+          document.getElementById('confirmPassword').value = '';
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
